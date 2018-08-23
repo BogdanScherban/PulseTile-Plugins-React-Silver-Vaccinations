@@ -23,7 +23,7 @@ import { checkIsValidateForm, operationsOnCollection } from '../../../../utils/p
 import VaccinationDetail from './VaccinationDetail/VaccinationDetail';
 import PluginCreate from '../../../plugin-page-component/PluginCreate';
 import VaccinationCreateForm from './VaccinationCreate/VaccinationCreateForm';
-import { testConstants, isDevMode } from '../../../../config/for-test.constants';
+import { imageSource } from './ImageSource';
 
 const VACCINATIONS_MAIN = 'vaccinationsMain';
 const VACCINATIONS_DETAIL = 'vaccinationsDetail';
@@ -242,9 +242,6 @@ export default class Vaccination extends PureComponent {
     if (isDetailPanelVisible && !_.isEmpty(vaccinationDetail)) {
       sourceId = vaccinationDetail[valuesNames.SOURCE_ID];
     }
-
-    const imageLocation = '/images/banners/vaccinations.jpg';
-    const imageSource = isDevMode ? (testConstants.hostName + imageLocation) : imageLocation;
 
     return (<section className="page-wrapper">
       {!(isDetailPanelVisible || isCreatePanelVisible) ?
